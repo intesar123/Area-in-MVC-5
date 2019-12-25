@@ -13,12 +13,19 @@ namespace MVCTest
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.MapMvcAttributeRoutes();
+           
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-                namespaces:new[] { "MVCTest.Controllers" }
-            );
+                name: "Enrolments",
+                url:"Enrolments/{action}/{id}",
+                defaults:new {Controller="Entrolments",action="Index",id=UrlParameter.Optional},
+                namespaces: new[] { "MVCTest.Controllers" }
+                );
+            routes.MapRoute(
+               name: "Default",
+               url: "{controller}/{action}/{id}",
+               defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+               namespaces: new[] { "MVCTest.Controllers" }
+           );
         }
     }
 }

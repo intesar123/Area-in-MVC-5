@@ -18,6 +18,7 @@ namespace MVCTest.Controllers
         private SchoolContext db = new SchoolContext();
 
         // GET: Enrolments
+        [Route("Enrolments/List")]
         public ActionResult Index()
         {
             var enrolments = db.Enrolments.Include(e => e.Course).Include(e => e.Student);

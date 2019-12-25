@@ -26,5 +26,9 @@ namespace MVCTest.Controllers
 
             return View();
         }
+        public ActionResult Message()
+        {
+            return JavaScript("alert('Hello');");
+        }
     }
 }
